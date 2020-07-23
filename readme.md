@@ -171,4 +171,6 @@ class Class(Base):
     id = Column(Integer, primary_key=True)
 ~~~
 
+En este caso, tuvimos que crear una tabla auxiliar para mantener la asociación entre las instancias de Student y las instancias de Class, ya que esto no sería posible sin una tabla adicional. Tenga en cuenta que, para que SQLAlchemy conozca la tabla auxiliar, la pasamos en el parámetro secundario de la función de relación.
+
 Los fragmentos de código anteriores muestran solo un subconjunto de las opciones de asignación admitidas por SQLAlchemy. En las siguientes secciones, vamos a echar un vistazo más profundo a cada uno de los patrones de relación disponibles. Además de eso, [la documentación oficial](http://docs.sqlalchemy.org/en/latest/orm/basic_relationships.html) es una gran referencia para aprender más sobre los patrones de relación en SQLAlchemy.
