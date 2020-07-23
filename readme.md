@@ -13,7 +13,7 @@ from sqlalchemy import create_engine
 engine = create_engine('postgresql://usr:pass@localhost:5432/sqlalchemy')
 ~~~
 
-### Este ejemplo crea un motor PostgreSQL para comunicarse con una instancia que se ejecuta localmente en el puerto 5432 (el predeterminado). También define que usará ***usr*** y ***pass*** como credenciales para interactuar con la base de datos sqlalchemy. Tenga en cuenta que crear un motor no se conecta a la base de datos al instante. Este proceso se pospone cuando es necesario (como cuando enviamos una consulta o cuando creamos / actualizamos una fila en una tabla).
+Este ejemplo crea un motor PostgreSQL para comunicarse con una instancia que se ejecuta localmente en el puerto 5432 (el predeterminado). También define que usará ***usr*** y ***pass*** como credenciales para interactuar con la base de datos sqlalchemy. Tenga en cuenta que crear un motor no se conecta a la base de datos al instante. Este proceso se pospone cuando es necesario (como cuando enviamos una consulta o cuando creamos / actualizamos una fila en una tabla).
 
 Dado que SQLAlchemy se basa en la especificación DBAPI para interactuar con las bases de datos, se admiten los sistemas de administración de bases de datos más comunes disponibles. PostgreSQL, MySQL, Oracle, Microsoft SQL Server y SQLite son ejemplos de motores que podemos usar junto con SQLAlchemy. Para obtener más información sobre las opciones disponibles para crear motores SQLAlchemy, [consulte la documentación oficial](https://docs.sqlalchemy.org/en/13/core/engines.html)
 
@@ -36,13 +36,13 @@ Hay varias implementaciones del patrón de agrupación de conexiones disponibles
 
 Como los programas habituales listos para la producción deben anular estos valores predeterminados (para ajustar los grupos a sus necesidades), la mayoría de las diferentes implementaciones de grupos de conexiones proporcionan un conjunto similar de opciones de configuración. La siguiente lista muestra las opciones más comunes con sus descripciones:
 
-### pool_size: Establece el número de conexiones que manejará el grupo.
+- pool_size: Establece el número de conexiones que manejará el grupo.
 
-### max_overflow: Especifica cuántas conexiones excedentes (en relación con pool_size) admite el grupo.
+- max_overflow: Especifica cuántas conexiones excedentes (en relación con pool_size) admite el grupo.
 
-### pool_recycle: configura la antigüedad máxima (en segundos) de las conexiones en el grupo.
+- pool_recycle: configura la antigüedad máxima (en segundos) de las conexiones en el grupo.
 
-### pool_timeout: Identifies how many seconds the program will wait before giving up on getting a connection from the pool.
+- pool_timeout: Identifies how many seconds the program will wait before giving up on getting a connection from the pool.
 
 # 3) SQLAlchemy Dialects
 
